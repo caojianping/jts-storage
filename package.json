@@ -1,0 +1,33 @@
+{
+    "name": "jts-storage",
+    "version": "1.0.0",
+    "description": "Caojianping's localStorage and sessionStorage library.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "release": "tsc && npm publish",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/caojianping/jts-storage.git"
+    },
+    "keywords": [
+        "localStorage",
+        "sessionStorage",
+        "TypeScript",
+        "JavaScript",
+        "Node.js"
+    ],
+    "author": "caojianping",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/caojianping/jts-storage/issues"
+    },
+    "homepage": "https://github.com/caojianping/jts-storage#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "typescript": "^3.6.2"
+    }
+}

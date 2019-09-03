@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es3",
+        "baseUrl": "src",
+        "outDir": "./dist",
+        "declaration": true,
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "listFiles": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
