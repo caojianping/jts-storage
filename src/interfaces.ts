@@ -3,9 +3,9 @@
  */
 export default class StorageStore<T> {
     data: T;
-    expires: number;
+    expires?: number;
 
-    constructor(data: T, expires: number) {
+    constructor(data: T, expires?: number) {
         this.data = data;
         this.expires = expires;
     }

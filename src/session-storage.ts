@@ -1,3 +1,5 @@
+import Util from './util';
+
 const sessionStorage = window.sessionStorage;
 
 export default class SessionStorage {
@@ -24,7 +26,7 @@ export default class SessionStorage {
      */
     public static setItem<T>(key: string, value: T): boolean {
         if (!sessionStorage || !key) return false;
-        if (value === undefined || value === null) return false;
+        if (Util.isUndefinedOrNull(value)) return false;
 
         try {
             sessionStorage.setItem(key, JSON.stringify(value));

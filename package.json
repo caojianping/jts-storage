@@ -1,7 +1,7 @@
 {
     "name": "jts-storage",
-    "version": "1.0.1",
-    "description": "Caojianping's localStorage and sessionStorage library.",
+    "version": "1.0.2",
+    "description": "提供通用localStorage、sessionStorage的API方法。",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {

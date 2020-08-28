@@ -1,5 +1,5 @@
-import CONSTANTS from "./constants";
-import StorageStore from "./interfaces";
+import Util from './util';
+import StorageStore from './interfaces';
 
 const localStorage = window.localStorage;
 
@@ -16,11 +16,14 @@ export default class LocalStorage {
             if (value == null) return null;
 
             let store: StorageStore<T> = <StorageStore<T>>JSON.parse(value);
-            if (store.expires <= Date.now()) {
-                localStorage.removeItem(key);
-                return null;
+            if (Util.isUndefinedOrNull(store.expires)) return <T>store.data;
+            else {
+                if (store.expires <= Date.now()) {
+                    localStorage.removeItem(key);
+                    return null;
+                }
+                return <T>store.data;
             }
-            return <T>store.data;
         } catch (err) {
             throw `LocalStorage's getItem error: ${JSON.stringify(err)}!`;
         }
@@ -32,12 +35,15 @@ export default class LocalStorage {
      * @param value
      * @param expires
      */
-    public static setItem<T>(key: string, value: T, expires: number = CONSTANTS.TWO_HOURS): boolean {
+    public static setItem<T>(key: string, value: T, expires?: number): boolean {
         if (!localStorage || !key) return false;
-        if (value === undefined || value === null) return false;
+        if (Util.isUndefinedOrNull(value)) return false;
 
         try {
-            let store = new StorageStore(value, Date.now() + expires);
+            let store =
+                expires === undefined
+                    ? new StorageStore(value)
+                    : new StorageStore(value, Date.now() + expires);
             localStorage.setItem(key, JSON.stringify(store));
             return true;
         } catch (err) {
