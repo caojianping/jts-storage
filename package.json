@@ -1,7 +1,7 @@
 {
     "name": "jts-storage",
-    "version": "1.0.2",
-    "description": "提供通用localStorage、sessionStorage的API方法。",
+    "version": "1.0.3",
+    "description": "Web存储localStorage、sessionStorage的TypeScript封装，提供通用的API方法（同原有的js方法名称均一致），同时支持泛型方法。",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
