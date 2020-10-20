@@ -46,9 +46,9 @@ LocalStorage.removeItem(key3); // 返回：true/false;
 // SessionStorage测试
 const key4 = 'session_number';
 const value4 = 666888;
-SessionStorage.setItem<number>(key3, value4); // 返回：true/false;
-SessionStorage.getItem<number>(key3); // 返回：666888/null;
-SessionStorage.removeItem(key3); // 返回：true/false
+SessionStorage.setItem<number>(key4, value4); // 返回：true/false;
+SessionStorage.getItem<number>(key4); // 返回：666888/null;
+SessionStorage.removeItem(key4); // 返回：true/false
 
 const key5 = 'session_string';
 const value5 = 'bala bala xiaomoxian';

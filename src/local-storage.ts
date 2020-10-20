@@ -40,10 +40,7 @@ export default class LocalStorage {
         if (Util.isUndefinedOrNull(value)) return false;
 
         try {
-            let store =
-                expires === undefined
-                    ? new StorageStore(value)
-                    : new StorageStore(value, Date.now() + expires);
+            let store = expires === undefined ? new StorageStore(value) : new StorageStore(value, Date.now() + expires);
             localStorage.setItem(key, JSON.stringify(store));
             return true;
         } catch (err) {
